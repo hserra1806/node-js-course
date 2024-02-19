@@ -1,0 +1,31 @@
+### Recuperar todas las películas
+GET http://localhost:1234/movies
+
+### Recuperar una película por su id
+GET http://localhost:1234/movies/5ad1a235-0d9c-410a-b32b-220d91689a08
+
+### Recuperar todas las películas de un género
+GET http://localhost:1234/movies?genre=Action
+
+### Crear una película
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+  "sql": "SELECT * FROM users",
+  "title": "Interstellar",
+  "year": 2014,
+  "director": "Christopher Nolan",
+  "duration": 169,
+  "poster": "https://m.media-amazon.com/images/I/91obuWzA3XL._AC_UF1000,1000_QL80_.jpg",
+  "genre": ["Adventure", "Drama", "Sci-Fi"]
+}
+
+### Actualizar una película
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+  "title": "hola",
+  "year": 1993
+}
